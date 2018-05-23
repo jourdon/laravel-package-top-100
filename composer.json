@@ -1,0 +1,23 @@
+{
+    "name": "jourdon/laravel-packages-top-100",
+    "description": "the-highest-amount-of-downloads-of-the-100-laravel-extensions-recommended.",
+    "keywords": ["laravel", "packages", "top"],
+    "homepage": "http://github.com/jourdon",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jourdon",
+            "email": "jourdonwong@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/filesystem": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jourdon\\Packagist\\": "src/"
+        }
+    }
+}
