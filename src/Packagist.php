@@ -102,13 +102,13 @@ final class Packagist
         $fs->appendToFile($file, "## 简介\r\n下载量最高的 100 个 Laravel 扩展包\r\n## 排名\r\n| 排名 | 包地址 | 下载次数 | Star | 描述 |\r\n|---|---|---|---|---|\r\n");
         foreach ($results as $index => $result) {
             $name = $result['name'];
-            $description = str_replace("|","/",is_null($this->translator) ? $result['description'] : $this->translator->trans($result['description']));
+            $description = str_replace("|","/",is_null($this->translator) ? $result['description'] : $result['description'].'<br>'.$this->translator->trans($result['description']));
             $repository = $result['repository'];
             $downloads = $result['downloads'];
             $favers = $result['favers'];
             $number = $index + 1;
 
-            $str = "| {$number} | [{$name}]({$repository}) | {$downloads} | {$favers} | {$description} |\r\n";
+            $str = "| {$number} | [{$name}]({$repository}) | {$downloads} | {$favers} |  {$description} |\r\n";
             $fs->appendToFile($file, $str);
         }
     }
